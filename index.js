@@ -39,12 +39,16 @@ class Locomotive{
   newPassenger(n){
     if(this.maxSeat === this.people || n > (this.maxSeat - this.people)){
       throw Error('seats is not enough')
-    } 
-    return this.people += n;
+    }
+    const res = this.people += n
+    return res;
   }
 }
 
 const newLocomotive = new Locomotive (10,6, 'dfd', 345, true);
+console.log(newLocomotive);
+
+newLocomotive.newPassenger(3)
 console.log(newLocomotive);
 ////
 
@@ -95,8 +99,8 @@ const arrTrains = ['train1', 'train2', 'train3']
 const newTrain = new Train(arrTrains);
 console.log((newTrain));
 
-// newTrain.speedUp()
-// newTrain.speedDown()
-// newTrain.stop()
+newTrain.speedUp()
+newTrain.speedDown()
+newTrain.stop()
 newTrain.addTrain()
 newTrain.forEach()
